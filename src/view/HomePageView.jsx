@@ -1,7 +1,6 @@
 import { ColumnCard, BookInfoCard } from "@/components/ui/card";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useDispatch } from "react-redux";
 import { getBooks } from "@/src/redux/slice/bookSlice";
 import Image from "next/image";

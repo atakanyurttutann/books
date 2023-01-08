@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useDispatch } from "react-redux";
 import { getBooks } from "@/src/redux/slice/bookSlice";
-import "swiper/css";
 import Image from "next/image";
 const HomePageView = () => {
   const { books } = useSelector((state) => state.book);
@@ -52,8 +51,10 @@ const HomePageView = () => {
   return (
     <div className=" custom-container ">
       <div className=" w-full mt-[63px]  font-robotoRegular ">
-        <div className=" flex items-center">
-          <div className=" text-[28px] text-[#707090] mr-10">Lorem Board</div>
+        <div className=" flex items-center w-full flex-wrap">
+          <div className=" lg:w-auto w-full text-[28px] text-[#707090] mr-10">
+            Lorem Board
+          </div>
           <div className="text-[#1E272E] text-[15px] mr-3">books of</div>
           <form onSubmit={sumbit} className="flex">
             <input
@@ -78,7 +79,9 @@ const HomePageView = () => {
               {" "}
               {booksFilter?.map((item, index) => {
                 return (
-                  <div key={index} className=" min-w-[22%] mr-[40px]">
+                  <div
+                    key={index}
+                    className=" min-w-full lg:min-w-[22%] mr-[40px]">
                     <ColumnCard title={item.year}>
                       {item.data.map((item, index) => (
                         <div key={index} className=" mb-5">

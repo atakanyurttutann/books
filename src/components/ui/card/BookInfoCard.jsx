@@ -15,7 +15,7 @@ const BookInfoCard = ({ info }) => {
           className={`text-[#707090] text-[14px]     w-[75%]  ${
             show ? "" : "whitespace-nowrap overflow-hidden text-ellipsis "
           }`}>
-          dasdasd asd asd as das das d a assacasdasd asd sas
+          {info.title}
         </div>
         <div className=" cursor-pointer">
           {show ? <BottomIcon /> : <RightIcon />}
@@ -25,15 +25,19 @@ const BookInfoCard = ({ info }) => {
         <div className=" mt-5">
           <div className=" flex justify-between items-center mb-[23px]">
             <div className=" w-[85px] h-[20px]  bg-[#82C786] rounded-[3px] text-white text-[12px] flex justify-center items-center">
-              4 Editions
+              {info.edition_count} Editions
             </div>
             <div className=" text-[12px] text-[#AAAAAA]">
-              First Published: 1925
+              {info.first_publish_year && (
+                <div>First Published: {info.first_publish_year}</div>
+              )}
             </div>
           </div>
           <div className=" text-[12px] text-[#AAAAAA] flex">
-            <div className=" mr-3">123 Pages</div>
-            <div>32 Hours Time</div>
+            {info.number_of_pages_median && (
+              <div className=" mr-3">{info.number_of_pages_median} pages</div>
+            )}
+            <div>32 hours read time</div>
           </div>
         </div>
       )}
